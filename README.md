@@ -58,3 +58,28 @@ public class Main2 {
     }
     }
 
+
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce el DNI");
+        String x= scanner.nextLine();
+        String y = x.trim();
+        int z = y.length();
+
+        String q = z == 9 ? "Validación OK" : "Validación KO";
+        System.out.println(q);
+
+        if (z >= 9) {
+            System.out.println("El espacio está en la posición: " + (y.indexOf(" ")+1));
+
+        }
+
+
+
+    }
+    }
