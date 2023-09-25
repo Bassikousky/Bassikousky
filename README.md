@@ -34,3 +34,27 @@ public class Main {
 
        for (int i=z-1; i >=0; i--)
         System.out.println(x.charAt(i));
+
+
+        
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        String x="Hola";
+        System.out.println("Introduce el caracter");
+        String y = scanner.nextLine();
+        int w = x.indexOf(y);
+
+        if (w != -1) {
+            System.out.println("El caracter está en la posición: " + (w+1));
+        }
+        else{
+            System.out.println("El caracter no está en la palabra");
+        }
+    }
+    }
+
