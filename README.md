@@ -83,3 +83,20 @@ public class Main2 {
 
     }
     }
+
+
+            final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce el DNI");
+        String x = scanner.nextLine();
+        String y = x.trim();
+        int z = y.length();
+
+        String q = z == 9 ? "Validación OK" : "Validación KO";
+        System.out.println(q);
+
+        if (z == 10) y.equals(y.indexOf(" ") != -1); {
+                System.out.println("El espacio está en la posición: " + y.indexOf(" "));
+                System.out.println("El DNI es: ");
+                System.out.println(y.substring(0, y.indexOf(" ")) + y.substring((y.indexOf(" ") + 1), y.length()));
+                System.out.println("Validación OK");
