@@ -28,3 +28,9 @@ public class Main {
     }
 
 }
+
+        String x="Hola";
+        int z = x.length();
+
+       for (int i=z-1; i >=0; i--)
+        System.out.println(x.charAt(i));
