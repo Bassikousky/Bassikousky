@@ -130,3 +130,49 @@ public class Main {
         }
     }
 }
+
+
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce el día de la semana: ");
+        String dia = scanner.nextLine();
+        String dia_minus = dia.toLowerCase();
+
+        switch (dia_minus) {
+            case "lunes":
+                System.out.println("Hoy es " + dia_minus +", el dia 1 de la semana");
+                break;
+            case "martes":
+                System.out.println("Hoy es " + dia_minus +", el dia 2 de la semana");
+                break;
+            case "miercoles":
+                System.out.println("Hoy es " + dia_minus +", el dia 3 de la semana");
+                break;
+            case "jueves":
+                System.out.println("Hoy es " + dia_minus +", el dia 4 de la semana");
+                break;
+            case "viernes":
+                System.out.println("Hoy es " + dia_minus +", el dia 5 de la semana");
+                break;
+            case "sábado":
+                System.out.println("Hoy es " + dia_minus +", el dia 6 de la semana");
+                break;
+            case "sabado":
+                System.out.println("Hoy es " + dia_minus +", el dia 6 de la semana, pero has olvidado la tilde");
+                break;
+            case "domingo":
+                System.out.println("Hoy es " + dia_minus +", el dia 7 de la semana");
+                break;
+            default:
+                System.out.println("No has introducido un día correcto");
+
+
+        }
+
+    }
+}
