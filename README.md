@@ -176,3 +176,58 @@ public class Main2 {
 
     }
 }
+
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce tu edad: ");
+        int edad = scanner.nextInt();
+
+        if (edad >= 18) {
+            System.out.println("Introduce tu provincia: ");
+            String provincia = scanner.next();
+
+            switch (provincia) {
+                case "Sevilla":
+                    System.out.println("El codigo de provincia es 41");
+                    break;
+                case "Huelva":
+                    System.out.println("El codigo de provincia es 21");
+                    break;
+                case "Cádiz":
+                    System.out.println("El codigo de provincia es 11");
+                    break;
+                case "Málaga":
+                    System.out.println("El codigo de provincia es 29");
+                    break;
+                case "Córdoba":
+                    System.out.println("El codigo de provincia es 14");
+                    break;
+                case "Granada":
+                    System.out.println("El codigo de provincia es 18");
+                    break;
+                case "Jaen":
+                    System.out.println("El codigo de provincia es 23");
+                    break;
+                case "Almería":
+                    System.out.println("El codigo de provincia es 04");
+                    break;
+                default:
+                    System.out.println("No has introducido una provincia válida");
+                    
+            }
+        } else {
+            System.out.println("No eres mayor de edad");
+        }
+
+
+        }
+
+    }
+
