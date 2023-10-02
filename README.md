@@ -100,3 +100,33 @@ public class Main2 {
                 System.out.println("El DNI es: ");
                 System.out.println(y.substring(0, y.indexOf(" ")) + y.substring((y.indexOf(" ") + 1), y.length()));
                 System.out.println("Validación OK");
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce el primer número: ");
+        int x = scanner.nextInt();
+        System.out.println("Introduce el segundo número: ");
+        int y = scanner.nextInt();
+        System.out.println("Introduce el tercer número: ");
+        int z = scanner.nextInt();
+
+        if ((x>y) && (x>z)) {
+            System.out.println("El número mayor es: ");
+            System.out.println(x);
+        } else if ((y>x) && (y>z)) {
+            System.out.println("El número mayor es: ");
+            System.out.println(y);
+        } else {
+            System.out.println("El número mayor es: ");
+            System.out.println(z);
+        }
+    }
+}
