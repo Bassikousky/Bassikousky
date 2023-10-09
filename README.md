@@ -231,3 +231,13 @@ public class Main2 {
 
     }
 
+            System.out.println("Introduce un código postal: ");
+        String cp = scanner.nextLine();
+
+        while (cp.length() != 5) {
+            System.out.println("Introduce un código postal válido: ");
+            cp = scanner.nextLine();
+        }
+
+        System.out.println("Codigo postal correcto");
+
