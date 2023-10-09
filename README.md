@@ -263,3 +263,28 @@ public class Main2 {
         for (i = palabra.length() - 1; i > -1; i--) {
             System.out.println (palabra.charAt(i) + " en la posición " + (i+1));
         }
+
+// Francisco López Marín
+
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        int i = 0;
+        int suma = 0;
+
+        System.out.println("Introduce un número: ");
+        int numero = scanner.nextInt();
+
+        while (numero >= 0) {
+            suma = suma + numero;
+            i = i+1;
+            System.out.println("Introduce un número: ");
+            numero = scanner.nextInt();
+        }
+            
+            System.out.println(suma/i);
+    }
+}
