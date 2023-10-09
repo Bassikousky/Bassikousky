@@ -241,3 +241,10 @@ public class Main2 {
 
         System.out.println("Codigo postal correcto");
 
+        final Scanner scanner = new Scanner(System.in);
+        String cp = "a";
+
+        do {
+            System.out.println("Introduce un código postal válido: ");
+            cp = scanner.nextLine();
+        } while (cp.length() != 5);
