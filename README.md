@@ -248,3 +248,18 @@ public class Main2 {
             System.out.println("Introduce un código postal válido: ");
             cp = scanner.nextLine();
         } while (cp.length() != 5);
+
+
+                System.out.println("Introduce una palabra: ");
+        String palabra = scanner.nextLine();
+        int i;
+        for (i = 0; i < palabra.length(); i++) {
+            System.out.println (palabra.charAt(i) + " en la posición " + (i+1));
+        }
+
+        System.out.println("Introduce una palabra: ");
+        String palabra = scanner.nextLine();
+        int i;
+        for (i = palabra.length() - 1; i > -1; i--) {
+            System.out.println (palabra.charAt(i) + " en la posición " + (i+1));
+        }
