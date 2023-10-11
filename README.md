@@ -288,3 +288,36 @@ public class Main2 {
             System.out.println(suma/i);
     }
 }
+
+        System.out.println("Indica hasta que número irá la sucesión: ");
+        int fin = scanner.nextInt();
+        int a = 0;
+        int b = 1;
+        int c = 1;
+
+        System.out.println(a);
+        for (b = 1;c <= fin; b=c) {
+            System.out.println(c);
+            c = a+b;
+            a = b;
+        }
+        final Scanner scanner = new Scanner(System.in);
+        System.out.println("Indica hasta que número irá la sucesión: ");
+        int fin = scanner.nextInt();
+        int a = 0;
+        int b = 1;
+        int c = 0;
+
+
+        System.out.println(a);
+        System.out.println(b);
+        while (c < fin) {
+            c = a + b;
+            if (c <= fin) {
+                System.out.println(c);
+            }
+            a = b;
+            b = c;
+        }
+    }
+}
