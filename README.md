@@ -321,3 +321,35 @@ public class Main2 {
         }
     }
 }
+
+// Francisco López Marín
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        final Random rand = new Random();
+        final int numeroAleatorio = rand.nextInt(100);
+        int i;
+        int intento = -1;
+
+        for (i=1;i!=11;i++) {
+            System.out.println("Intento nº" + i);
+            intento = scanner.nextInt();
+            if (intento>numeroAleatorio){
+                System.out.println("El numero es menor");
+            }
+            if (intento<numeroAleatorio){
+                System.out.println("El numero es mayor");
+            }
+            if (i==10){
+                System.out.println("FAIL!");
+            }
+            if (intento==numeroAleatorio){
+                System.out.println("ENHORABUENA!");
+                i=10;
+            }
+        }
