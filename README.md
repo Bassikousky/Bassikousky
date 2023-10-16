@@ -505,3 +505,30 @@ public class Main2 {
         }
     }
 }
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        int i;
+        int j;
+        System.out.println("Hasta que número quieres llegar?");
+        int num = scanner.nextInt();
+
+        for (i=0;i<=num;i++){
+            System.out.println(i);
+
+                for (j=0;j<=i;j++) {
+                    if (i != num) {
+                        System.out.print(j + " ");
+                    }
+                }
+            }
+
+
+
+    }
+}
