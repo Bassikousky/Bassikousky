@@ -532,3 +532,24 @@ public class Main {
 
     }
 }
+
+import java.util.Scanner;
+
+public class Main3 {
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        System.out.println("Indica el número al que quieres hacer el factorial:");
+        int num = scanner.nextInt();
+        int i;
+        long prod = 1;
+
+        for (i = 1; i <= num; i++) {
+            prod = prod * i;
+        }
+        if (prod <= 0) {
+            System.out.println("El numero es demasiado grande, eso dijo ella");
+        } else {
+            System.out.println("El factorial de " + num + " es " + prod);
+        }
+    }
+}
