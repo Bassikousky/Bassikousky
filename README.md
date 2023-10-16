@@ -472,3 +472,36 @@ public class Main2 {
         }
     }
 }
+//Francisco López Marín
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        int i; //numero de notas
+        int j; //numero de alumno
+        double suma;
+        double nota;
+        String nombreAlumno;
+        System.out.println("Introduce el número de alumnos");
+            int alumno = scanner.nextInt(); //número de alumnos total
+
+        for (j = 0; j < alumno; j++) {
+            suma = 0;
+            i = 0;
+            System.out.println("Introduce el nombre del alumno: ");
+                nombreAlumno = scanner.next();
+            System.out.println("Introduce las notas: ");
+                nota = scanner.nextInt();
+
+            while (nota >= 0) {
+                suma = suma + nota;
+                i = i + 1;
+                nota = scanner.nextInt();
+            }
+            System.out.println("El alumno " + nombreAlumno + " tiene una nota media de: ");
+            System.out.println(suma / i);
+        }
+    }
+}
