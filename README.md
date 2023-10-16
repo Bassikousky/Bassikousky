@@ -438,3 +438,37 @@ public class Main {
 
     }
 }
+
+import java.util.Scanner;
+
+public class Main2 {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        int i;
+        double suma;
+        System.out.println("Introduce el número de alumnos");
+        int alumno = scanner.nextInt();
+        double nota;
+        int j;
+        String nombreAlumno;
+
+        for (j = 0; j < alumno; j++) {
+            suma = 0;
+            i=0;
+            System.out.println("Introduce el nombre del alumno: ");
+            nombreAlumno = scanner.next();
+            System.out.println("Introduce una nota: ");
+            nota = scanner.nextInt();
+
+            while (nota >= 0) {
+                suma = suma + nota;
+                i = i + 1;
+                System.out.println("Introduce una nota: ");
+                nota = scanner.nextInt();
+            }
+            System.out.println("El alumno " + nombreAlumno + " tiene una nota media de: ");
+            System.out.println(suma / i);
+        }
+    }
+}
