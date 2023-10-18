@@ -553,3 +553,40 @@ public class Main3 {
         }
     }
 }
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        int i;
+        int j;
+        System.out.println("Hasta que número quieres llegar?");
+        int num = scanner.nextInt();
+
+        for (i = num; i >= 0; i--) {
+            for (j = 0; j <= i; j++) {
+                if (j != i) {
+                    System.out.print(j + " ");
+                }
+            }
+            if (i!=0){
+                System.out.println(i);
+            }
+        }
+
+            for (i = 0; i <= num; i++) {
+                System.out.println(i);
+                for (j = 0; j <= i; j++) {
+                    if (i != num) {
+                        System.out.print(j + " ");
+                    }
+                }
+            }
+
+
+        }
+    }
+
