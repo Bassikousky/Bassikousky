@@ -590,3 +590,85 @@ public class Main {
         }
     }
 
+
+// Francisco López Marín
+
+import java.util.Scanner;
+
+public class Main3 {
+
+    public static String numchar(String palabra, char caracter) {
+
+        char letra;
+        int i = 0;
+        int contador = 0;
+        String textoFinal;
+
+        while (i != palabra.length()) {
+            letra = palabra.charAt(i);
+            if (letra == caracter) {
+                contador = contador + 1;
+            }
+            i++;
+        }
+        if (contador == 1) {
+            textoFinal = "El carácter se repite una vez";
+        } else if (contador == 0) {
+            textoFinal = "El carácter no se encuentra en la palabra";
+        } else {
+            textoFinal = "El carácter se repite " + contador + " veces";
+        }
+
+        return textoFinal;
+    }
+
+    public static boolean vocalOConsonante(char caracter) {
+        boolean letra;
+
+        switch (caracter) {
+            case 'a':
+                letra = true;
+                break;
+            case 'e':
+                letra = true;
+                break;
+            case 'i':
+                letra = true;
+                break;
+            case 'o':
+                letra = true;
+                break;
+            case 'u':
+                letra = true;
+                break;
+            default:
+                letra = false;
+        }
+        return letra;
+    }
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+        String palabra;
+        char caracter;
+
+
+        System.out.println("Introduce una palabra");
+        palabra = scanner.next();
+
+        while (!palabra.equals("exit")) {
+            System.out.println("Introduce un carácter");
+            caracter = scanner.next().charAt(0);
+
+            String a = numchar(palabra, caracter);
+            System.out.println(a);
+            boolean b = vocalOConsonante(caracter);
+            String vocal = (b) ? "La letra es vocal" : "La letra es consonante";
+            System.out.println(vocal);
+
+            System.out.println("Introduce una palabra");
+            palabra = scanner.next();
+
+        }
+    }
+}
