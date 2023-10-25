@@ -672,3 +672,71 @@ public class Main3 {
         }
     }
 }
+
+
+import java.util.Scanner;
+
+public class Coche {
+    private int tamanoDeposito;
+    private int cantidadGasolina;
+    private int kilometrosRecorridos;
+
+    public Coche(final int tamanoDeposito, final int gasolinaInicial) {
+        this.tamanoDeposito = tamanoDeposito;
+        if (gasolinaInicial > this.tamanoDeposito) {
+            this.cantidadGasolina = tamanoDeposito;
+        } else {
+            cantidadGasolina = gasolinaInicial;
+        }
+        this.kilometrosRecorridos = 0;
+    }
+
+    public boolean andar() {
+        if (this.cantidadGasolina > 0) {
+            System.out.print("=");
+            this.cantidadGasolina--;
+            this.kilometrosRecorridos++;
+            return true;
+        } else {
+            System.out.print("[PARA EN= " + this.kilometrosRecorridos + "]");
+            return false;
+        }
+    }
+
+    public void echarGasolina(int cantidadGasolina) {
+        if (this.cantidadGasolina + cantidadGasolina > tamanoDeposito) {
+            this.cantidadGasolina = tamanoDeposito;
+        } else {
+            this.cantidadGasolina += cantidadGasolina;
+        }
+        System.out.print("(GAS=" + cantidadGasolina + ")");
+    }
+
+    public int pintarKilometros() {
+        return kilometrosRecorridos;
+    }
+
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indica el tamaño de depósito");
+        int deposito = scanner.nextInt();
+        System.out.println("Indica la cantidad de gasolina");
+        int gaso = scanner.nextInt();
+        System.out.println("Indica los km a recorrer");
+        int km = scanner.nextInt();
+
+        Coche coche1 = new Coche(deposito, gaso);
+
+
+        while (km > coche1.kilometrosRecorridos) {
+            if (!coche1.andar()) {
+                System.out.println("Indica la cantidad de gasolina");
+                int x = scanner.nextInt();
+                coche1.echarGasolina(x);
+            }
+            System.out.println(coche1.pintarKilometros());
+        }
+        System.out.println("HAS LLEGADO!");
+    }
+}
