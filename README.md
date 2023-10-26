@@ -740,3 +740,66 @@ public class Coche {
         System.out.println("HAS LLEGADO!");
     }
 }
+
+public abstract class Vaso {
+
+    private int cantidad;
+    private int cantidadInicial;
+
+    public Vaso(final int cantidad) {
+        this.cantidad = 0;
+        this.cantidadInicial = cantidad;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void llenar() {
+        this.cantidad = cantidadInicial;
+        System.out.println("Llenando el vaso " + this.cantidadInicial);
+    }
+
+    public void vaciar() {
+        this.cantidad = 0;
+        System.out.println("Vaciando el vaso " + this.cantidadInicial);
+    }
+
+    private int getCantidadInicial() {
+        return this.cantidadInicial;
+    }
+
+    public void rellenarCon(final Vaso vaso) {
+        System.out.println("Vertiendo vaso " + vaso.getCantidadInicial() + " en vaso " + this.cantidadInicial);
+        int cantidadExtra = vaso.getCantidad();
+        if (cantidadExtra + this.cantidad > this.cantidadInicial) {
+            int cantidadVertida = this.cantidadInicial - cantidad;
+            vaso.setCantidad(cantidadExtra - cantidadVertida);
+            this.cantidad = cantidadInicial;
+        } else {
+            vaso.vaciar();
+            this.cantidad += cantidadExtra;
+        }
+    }
+
+    private void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+
+    public static void main(String[] args) {
+        Vaso3 vaso3 = new Vaso3();
+        Vaso5 vaso5 = new Vaso5();
+
+        vaso5.llenar();
+        vaso3.rellenarCon(vaso5);
+        System.out.println("El vaso 5 tiene: "+vaso5.getCantidad());
+        vaso3.vaciar();
+        vaso3.rellenarCon(vaso5);
+        System.out.println("El vaso 3 tiene: "+vaso3.getCantidad());
+        vaso5.llenar();
+        vaso3.rellenarCon(vaso5);
+        System.out.println("El vaso 5 tiene: "+vaso5.getCantidad());
+    }
+}
+
