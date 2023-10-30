@@ -803,3 +803,68 @@ public abstract class Vaso {
     }
 }
 
+// Francisco López Marín
+
+import com.iesfuengirola1.juegos.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(final String[] args) {
+        Juego juego = new Juego();
+        Scanner scanner = new Scanner(System.in);
+
+        Granjero granjero = new Granjero();
+        Lobo lobo = new Lobo();
+        Col col = new Col();
+        Cabra cabra = new Cabra();
+
+        juego.introducirPersonaje(granjero);
+        juego.introducirPersonaje(lobo);
+        juego.introducirPersonaje(col);
+        juego.introducirPersonaje(cabra);
+
+        String pj;
+        String mov;
+
+        juego.comenzar();
+        System.out.println("Comenzar aqui");
+
+
+        while (!juego.haGanado() && !juego.haPerdido()) {
+            System.out.println("Di el personaje a mover");
+            pj = scanner.next();
+            System.out.println("Di hacia donde (i para izquierda, d para derecha )");
+            mov = scanner.next();
+            switch (pj) {
+                case "lobo":
+                    if (mov.equals("i")) {
+                        lobo.moverIzquierda();
+                    } else {
+                        lobo.moverDerecha();
+                    }
+                    break;
+                case "cabra":
+                    if (mov.equals("i")) {
+                        cabra.moverIzquierda();
+                    } else {
+                        cabra.moverDerecha();
+                    }
+                    break;
+                case "col":
+                    if (mov.equals("i")) {
+                        col.moverIzquierda();
+                    } else {
+                        col.moverDerecha();
+                    }
+                    break;
+                default:
+                    if (mov.equals("i")) {
+                        granjero.moverIzquierda();
+                    } else {
+                        granjero.moverDerecha();
+                    }
+                    break;
+            }
+        }
+    }
+}
