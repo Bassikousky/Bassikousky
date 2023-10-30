@@ -868,3 +868,50 @@ public class Main {
         }
     }
 }
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        final Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce una palabra");
+        String palabra1 = scanner.next();
+        System.out.println("Introduce una palabra");
+        String palabra2 = scanner.next();
+        System.out.println("Introduce un carácter");
+        char caracter = scanner.next().charAt(0);
+
+        char letra;
+        int i = 0;
+        int contador1 = 0;
+        int contador2 = 0;
+
+        while (i != palabra1.length()) {
+            letra = palabra1.charAt(i);
+            if (letra == caracter) {
+                contador1 = contador1 + 1;
+            }
+            i++;
+        }
+        System.out.println(palabra1 + " tiene " + contador1 + " " + caracter);
+
+        i = 0;
+        while (i != palabra2.length()) {
+            letra = palabra2.charAt(i);
+            if (letra == caracter) {
+                contador2 = contador2 + 1;
+            }
+            i++;
+        }
+        System.out.println(palabra2 + " tiene " + contador2 + " " + caracter);
+
+        if (contador1 > contador2) {
+            System.out.println("En " + palabra1 + " está mas veces la letra " + caracter + " que en " + palabra2);
+        } else if (contador2 > contador1) {
+            System.out.println("En " + palabra2 + " está mas veces la letra " + caracter + " que en " + palabra1);
+        } else {
+            System.out.println("En " + palabra2 + " está presente las mismas veces la letra " + caracter + " que en " + palabra1);
+        }
+    }
+}
