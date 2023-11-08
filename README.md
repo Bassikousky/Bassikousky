@@ -994,3 +994,48 @@ public class Main {
 
     }
 }
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class Main2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indique la fecha con barras");
+        String fecha1 = scanner.next();
+        String fechaLimpia = fecha1.replace("/","");
+        String diaFecha = fechaLimpia.substring(0,2);
+        String mesFecha = fechaLimpia.substring(2,4);
+        String añoFecha = fechaLimpia.substring(4,8);
+        int dia = Integer.parseInt(diaFecha);
+        int mes = Integer.parseInt(mesFecha);
+        int año = Integer.parseInt(añoFecha);
+
+
+        LocalDate fecha = LocalDate.of(año,mes,dia);
+        System.out.println(fecha);
+
+        System.out.println("Indique que dato quiere modificar");
+        String variable = scanner.next();
+
+        System.out.println("Indique cuanto quiere sumar");
+        int suma = scanner.nextInt();
+
+        switch (variable) {
+            case "año":
+                fecha = fecha.plusYears(suma);
+            break;
+            case "mes":
+                fecha = fecha.plusMonths(suma);
+            break;
+            case "dia":
+                fecha = fecha.plusDays(suma);
+            break;
+        }
+
+        System.out.println(fecha);
+
+
+    }
+}
