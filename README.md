@@ -948,3 +948,49 @@ public class Main {
 
     }
 }
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indique un año");
+        int año = scanner.nextInt();
+        System.out.println("Indique un mes");
+        int mes = scanner.nextInt();
+        System.out.println("Indique un día");
+        int dia = scanner.nextInt();
+
+        LocalDate fecha = LocalDate.of(año,mes,dia);
+        System.out.println(fecha);
+
+        System.out.println("Indique que dato quiere modificar");
+        String variable = scanner.next();
+
+        System.out.println("Indique cuanto quiere sumar");
+        int suma = scanner.nextInt();
+        LocalDate nuevaFecha = LocalDate.now();
+
+        switch (variable) {
+            case "año":
+                nuevaFecha = fecha.plusYears(suma);
+            break;
+            case "mes":
+                nuevaFecha = fecha.plusMonths(suma);
+            break;
+            case "dia":
+                nuevaFecha = fecha.plusDays(suma);
+            break;
+        }
+
+        System.out.println(nuevaFecha);
+
+
+    }
+}
