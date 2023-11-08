@@ -1039,3 +1039,14 @@ public class Main2 {
 
     }
 }
+
+
+        System.out.println("Indique la fecha con barras");
+        String fecha1 = scanner.next();
+        String[] partes = fecha1.split("/");
+        String diaString = partes[0];
+        String mesString = partes[1];
+        String añoString = partes[2];
+        int dia = Integer.parseInt(diaString);
+        int mes = Integer.parseInt(mesString);
+        int año = Integer.parseInt(añoString);
