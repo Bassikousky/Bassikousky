@@ -915,3 +915,36 @@ public class Main {
         }
     }
 }
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.TemporalAdjusters;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+
+        LocalDate dia = LocalDate.now();
+        System.out.println(dia);
+        LocalDate dia2 = dia.plusDays(200);
+        System.out.println(dia2);
+        LocalTime hora = LocalTime.now();
+        System.out.println(hora);
+        LocalDate otroDia = LocalDate.of(2022,10,10);
+        System.out.println(otroDia);
+        LocalTime otraHora = LocalTime.of(14,55,5);
+        System.out.println(otraHora);
+        LocalDateTime fechaYhora = LocalDateTime.now();
+        System.out.println(fechaYhora);
+        LocalDateTime otraFechayHora = LocalDateTime.of(2002,8,24,19,34);
+        System.out.println(otraFechayHora);
+
+        DayOfWeek diaSemana = LocalDate.now().with(TemporalAdjusters.firstDayOfNextMonth()).getDayOfWeek();
+
+
+
+    }
+}
