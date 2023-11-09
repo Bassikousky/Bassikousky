@@ -1141,3 +1141,41 @@ public class Main {
         
     }
 }
+
+// Francisco López Marín
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indique el formato de la fecha:");
+        System.out.println("dd/MM/yyyy");
+        System.out.println("yyyy-MM-dd");
+        System.out.println("dd-MM-yyyy");
+        DateTimeFormatter formato1 = DateTimeFormatter.ofPattern(scanner.next());
+
+        System.out.println("Introduce una fecha");
+        String fechaString1 = scanner.next();
+        LocalDate dia1 = null;
+
+
+        try {
+            dia1 = LocalDate.parse(fechaString1,formato1);
+        } catch (final DateTimeException exception) {
+            System.out.println("No se ha podido formatear la fecha");
+        }
+
+        LocalDate hoy = LocalDate.now();
+
+
+        Period diferencia = Period.between(dia1,hoy);
+        if (diferencia.getYears() >= 18) {
+            System.out.println("Es mayor de edad");
+        } else {
+            System.out.println("NO Es mayor de edad");
+        }
+    }
+}
