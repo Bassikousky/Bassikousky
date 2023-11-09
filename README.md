@@ -1050,3 +1050,46 @@ public class Main2 {
         int dia = Integer.parseInt(diaString);
         int mes = Integer.parseInt(mesString);
         int año = Integer.parseInt(añoString);
+
+
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indique el formato de la fecha:");
+        System.out.println("dd/MM/yyyy");
+        System.out.println("yyyy-MM-dd");
+        System.out.println("dd-MM-yyyy");
+        String formato = scanner.next();
+
+        System.out.println("Introduce una fecha");
+        String fechaString = scanner.next();
+
+        DateTimeFormatter formato1 = null;
+
+        switch (formato) {
+            case "dd/MM/yyyy":
+                formato1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                break;
+            case "yyyy-MM-dd":
+                formato1 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                break;
+            case "dd-MM-yyyy":
+                formato1 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                break;
+        }
+
+        try {
+            System.out.println(formato1.format(LocalDate.parse(fechaString,formato1)));
+        } catch (final DateTimeException exception) {
+            System.out.println("No se ha podido formatear la fecha");
+        }
+    }
+}
