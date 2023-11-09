@@ -1093,3 +1093,51 @@ public class Main {
         }
     }
 }
+
+
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indique el formato de la fecha:");
+        System.out.println("dd/MM/yyyy");
+        System.out.println("yyyy-MM-dd");
+        System.out.println("dd-MM-yyyy");
+        DateTimeFormatter formato1 = DateTimeFormatter.ofPattern(scanner.next());
+        
+        System.out.println("Introduce dos fechas");
+        String fechaString1 = scanner.next();
+        String fechaString2 = scanner.next();
+        
+        try {
+            System.out.println(formato1.format(LocalDate.parse(fechaString1,formato1)));
+        } catch (final DateTimeException exception) {
+            System.out.println("No se ha podido formatear la fecha");
+        }
+        try {
+            System.out.println(formato1.format(LocalDate.parse(fechaString2,formato1)));
+        } catch (final DateTimeException exception) {
+            System.out.println("No se ha podido formatear la fecha");
+        }
+
+        System.out.println("Cambio de formato");
+        System.out.println("dd/MM/yyyy");
+        System.out.println("yyyy-MM-dd");
+        System.out.println("dd-MM-yyyy");
+
+        DateTimeFormatter formato2 = DateTimeFormatter.ofPattern(scanner.next());
+        
+        LocalDate dia1 = LocalDate.parse(fechaString1,formato1);
+        LocalDate dia2 = LocalDate.parse(fechaString2,formato1);
+        System.out.println(dia1.format(formato2));
+        System.out.println(dia2.format(formato2));
+
+        Period diferencia = Period.between(dia1,dia2);
+        System.out.println(diferencia.getDays()+ " dias " + diferencia.getMonths()+ " meses "  + diferencia.getYears() + " años ");
+        
+    }
+}
