@@ -1228,3 +1228,34 @@ public class Main {
         }
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        int[] numeros = new int[10];
+
+        for (int j = 0; j<numeros.length;j++) {
+            numeros[j] = j + 1;
+        }
+
+        for (int i = 0; i<numeros.length;i++) {
+            System.out.println(numeros[i]);
+        }
+
+        int a = 0;
+        boolean b = true;
+
+        while (numeros[a]<numeros[a+1] && a < (numeros.length - 2)) {
+            if (numeros[a]>numeros[a+1]) {
+                System.out.println("No está ordenado de menor a mayor");
+                b = false;
+            }
+            a++;
+        }
+
+        if (b) {
+            System.out.println("Está ordenado de menor a mayor");
+        }
+    }
+}
