@@ -1259,3 +1259,36 @@ public class Main {
         }
     }
 }
+
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Indica la longitud del array");
+        int longitud = scanner.nextInt();
+        int[] numeros = new int[longitud];
+
+        for (int i = 0; i<longitud;i++) {
+            System.out.println("Indica el número " + (i+1));
+            numeros[i] = scanner.nextInt();
+        }
+
+        System.out.println("La media aritmética es: " + mediaAritmetica(numeros));
+
+    }
+
+    public static double mediaAritmetica (int[] numeros) {
+        double suma = 0;
+        int i = 0;
+        int numero;
+        while (i < numeros.length) {
+            numero = numeros[i];
+            suma = suma + numero;
+            i++;
+        }
+        return suma/i;
+    }
+}
