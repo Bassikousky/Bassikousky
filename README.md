@@ -1179,3 +1179,37 @@ public class Main {
         }
     }
 }
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce una palabra");
+        String cadena = scanner.next();
+        if (estaOrdenadoAlfabeticamente(cadena)) {
+            System.out.println("La cadena está ordenada alfabéticamente.");
+        } else {
+            System.out.println("La cadena no está ordenada alfabéticamente.");
+        }
+    }
+
+    public static boolean estaOrdenadoAlfabeticamente(String str) {
+        // Llamada al método recursivo
+        return estaOrdenadoAlfabeticamente(str, 0);
+    }
+
+    private static boolean estaOrdenadoAlfabeticamente(String str, int indice) {
+        // Si el índice es igual a la longitud de la cadena - 1, significa que hemos
+        // llegado al final de la cadena y está ordenada.
+        if (indice == str.length() - 1) {
+            return true;
+        } else {
+            // Compara el carácter actual con el siguiente y llama recursivamente al método
+            // con el siguiente índice.
+            return str.charAt(indice) <= str.charAt(indice + 1) && estaOrdenadoAlfabeticamente(str, indice + 1);
+        }
+    }
+}
