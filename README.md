@@ -1292,3 +1292,18 @@ public class Main {
         return suma/i;
     }
 }
+
+//Francisco Lopez Marin
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(caracteresOrdenados("abcdefa"));
+    }
+    public static boolean caracteresOrdenados (String palabra) {
+        if (palabra.length() == 1) {
+            return true;
+        } else {
+            return palabra.charAt(0) <= palabra.charAt(1) && caracteresOrdenados(palabra.substring(1,palabra.length()));
+        }
+    }
+}
