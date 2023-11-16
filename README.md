@@ -1307,3 +1307,44 @@ public class Main {
         }
     }
 }
+
+//Francisco López Marín
+
+package main.java.org.example;
+
+import main.java.com.iesfuengirola1.talleres.Coche;
+import main.java.com.iesfuengirola1.talleres.Mecanico;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Indica la capacidad del taller");
+        int cantidad = scanner.nextInt();
+        Coche[] Taller = new Coche[cantidad];
+
+        int i;
+        String marca;
+        boolean estropeado;
+
+        for (i = 0; i < cantidad; i++) {
+            System.out.println("Coche " + (i + 1));
+            System.out.println("Indica la marca");
+            marca = scanner.next();
+            System.out.println("Indica si está estropeado");
+            estropeado = scanner.nextBoolean();
+            Coche coche = new Coche(marca, estropeado);
+            Taller[i] = coche;
+        }
+
+        Mecanico Pepe = new Mecanico();
+        for (i = 0; i < cantidad; i++) {
+            if (Taller[i].getEstropeado()) {
+                Pepe.arreglar(Taller[i]);
+                System.out.println("El coche " + (i + 1) + " " + Taller[i].getMarca() + " ha sido arreglado");
+            }
+        }
+    }
+}
