@@ -1348,3 +1348,50 @@ public class Main {
         }
     }
 }
+
+//Francisco López Marín
+
+import com.iesfuengirola1.personas.Persona;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Indica la cantidad de personas");
+        int cantidad = scanner.nextInt();
+        Persona[] Grupo = new Persona[cantidad];
+        int edad;
+        String nombre;
+
+        for (int i = 0; i < cantidad; i++) {
+            System.out.println("Persona " + (i + 1));
+            System.out.println("Indica su edad");
+            edad = scanner.nextInt();
+            System.out.println("Indica su nombre");
+            nombre = scanner.next();
+            Persona persona = new Persona(edad, nombre);
+            Grupo[i] = persona;
+        }
+
+        int menores = 0;
+        int mayor = 0;
+        String nombreMayor = null;
+
+        for (int i = 0; i < cantidad; i++) {
+            if (Grupo[i].getEdad() < 18) {
+                menores++;
+            }
+            if (Grupo[i].getEdad() > mayor) {
+                mayor = Grupo[i].getEdad();
+                nombreMayor = Grupo[i].getNombre();
+            }
+        }
+
+        System.out.println("Hay un total de " + menores + " menores de edad");
+        System.out.println("La persona con mas edad es " + nombreMayor + ", que tiene " + mayor +" años");
+
+    }
+
+}
+
+
