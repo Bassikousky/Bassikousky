@@ -1395,3 +1395,78 @@ public class Main {
 }
 
 
+public class Main {
+    public static void main(String[] args) {
+
+        int[][] matriz = {
+                {100, 30, 50, 60, 70, 80},
+                {60, 11, 85, 96, 17, 5},
+                {0, 13, 5, 6, 7, 99},
+                {78, 20, 17, 6, 7, 8},
+                {1, 3, 5, 6, 7, 8},
+                {47, 1, 54, 6, 7, 8},
+                {1, 12, 5, 6, 2, 8}
+        };
+
+        int valorMax = valorMaximoColumna(matriz,0);
+
+        for (int i = 1; i < matriz[0].length; i++) {
+            if (valorMax < valorMaximoColumna(matriz,i)) {
+                valorMax = valorMaximoColumna(matriz, i);
+            }
+        }
+        System.out.println(valorMax);
+
+        int valor = 0;
+        int valorTotal = 0;
+        for (int j = 0; j < matriz.length;j++) {
+            for (int k = 0; k < matriz[0].length;k++) {
+                valor = matriz[j][k];
+                valorTotal= valorTotal + valor;
+            }
+        }
+        System.out.println(valorTotal);
+
+
+
+    }
+    public static int[] columnaMatriz(int[][] matriz, int columna) {
+        int[] arrayColumna = new int[matriz.length];
+        for (int i = 0; i < matriz.length; i++) {
+            arrayColumna[i] = matriz[i][columna];
+        }
+        return arrayColumna;
+    }
+
+    public static int[] filaMatriz(int[][] matriz, int fila) {
+        int[] arrayFila = new int[matriz[0].length];
+        for (int i = 0; i < matriz[0].length; i++) {
+            arrayFila[i] = matriz[fila][i];
+        }
+        return arrayFila;
+    }
+
+    public static int valorMaximoColumna(int[][] matriz, int columna) {
+        int [] arrayColumna = columnaMatriz(matriz,columna);
+        int valorMax = arrayColumna[0];
+        for (int i = 1; i < arrayColumna.length; i++) {
+            if (arrayColumna[i] > valorMax) {
+                valorMax = arrayColumna[i];
+            }
+        }
+        return valorMax;
+    }
+
+    public static int valorMinimoFila(int[][] matriz, int fila) {
+        int[] arrayFila = filaMatriz(matriz, fila);
+        int valorMin = arrayFila[0];
+        for (int i = 1; i < arrayFila.length; i++) {
+            if (arrayFila[i] < valorMin) {
+                valorMin = arrayFila[i];
+            }
+        }
+        return valorMin;
+    }
+}
+
+
